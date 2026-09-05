@@ -97,3 +97,10 @@ env/
 
 # Bun / package manager noise
 *.tgz
+
+# Test and Coverage
+.pytest_cache/
+.coverage
+coverage/
+.vitest/
+.tanstack/

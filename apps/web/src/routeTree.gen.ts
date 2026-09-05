@@ -9,40 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SignUpRouteImport } from './routes/sign-up'
-import { Route as SignInRouteImport } from './routes/sign-in'
-import { Route as ReviewerRouteImport } from './routes/reviewer'
-import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ReviewerIndexRouteImport } from './routes/reviewer/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ReviewerRouteImport } from './routes/reviewer'
+import { Route as SignInRouteImport } from './routes/sign-in'
+import { Route as SignUpRouteImport } from './routes/sign-up'
 import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
-import { Route as ReviewerQueueRouteImport } from './routes/reviewer/queue'
-import { Route as DashboardVaultRouteImport } from './routes/dashboard/vault'
-import { Route as DashboardSupportRouteImport } from './routes/dashboard/support'
-import { Route as DashboardSettingsRouteImport } from './routes/dashboard/settings'
-import { Route as DashboardLegalAidRouteImport } from './routes/dashboard/legal-aid'
 import { Route as DashboardClaimsRouteImport } from './routes/dashboard/claims'
+import { Route as DashboardLegalAidRouteImport } from './routes/dashboard/legal-aid'
+import { Route as DashboardSettingsRouteImport } from './routes/dashboard/settings'
+import { Route as DashboardSupportRouteImport } from './routes/dashboard/support'
+import { Route as DashboardVaultRouteImport } from './routes/dashboard/vault'
+import { Route as ReviewerIndexRouteImport } from './routes/reviewer/index'
+import { Route as ReviewerQueueRouteImport } from './routes/reviewer/queue'
 import { Route as DashboardCasesNewIndexRouteImport } from './routes/dashboard/cases/new/index'
 
-const SignUpRoute = SignUpRouteImport.update({
-  id: '/sign-up',
-  path: '/sign-up',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SignInRoute = SignInRouteImport.update({
-  id: '/sign-in',
-  path: '/sign-in',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReviewerRoute = ReviewerRouteImport.update({
-  id: '/reviewer',
-  path: '/reviewer',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminRoute = AdminRouteImport.update({
@@ -50,39 +35,34 @@ const AdminRoute = AdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReviewerIndexRoute = ReviewerIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => ReviewerRoute,
+const ReviewerRoute = ReviewerRouteImport.update({
+  id: '/reviewer',
+  path: '/reviewer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignInRoute = SignInRouteImport.update({
+  id: '/sign-in',
+  path: '/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignUpRoute = SignUpRouteImport.update({
+  id: '/sign-up',
+  path: '/sign-up',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardIndexRoute = DashboardIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => DashboardRoute,
 } as any)
-const ReviewerQueueRoute = ReviewerQueueRouteImport.update({
-  id: '/queue',
-  path: '/queue',
-  getParentRoute: () => ReviewerRoute,
-} as any)
-const DashboardVaultRoute = DashboardVaultRouteImport.update({
-  id: '/vault',
-  path: '/vault',
-  getParentRoute: () => DashboardRoute,
-} as any)
-const DashboardSupportRoute = DashboardSupportRouteImport.update({
-  id: '/support',
-  path: '/support',
-  getParentRoute: () => DashboardRoute,
-} as any)
-const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
+const DashboardClaimsRoute = DashboardClaimsRouteImport.update({
+  id: '/claims',
+  path: '/claims',
   getParentRoute: () => DashboardRoute,
 } as any)
 const DashboardLegalAidRoute = DashboardLegalAidRouteImport.update({
@@ -90,10 +70,30 @@ const DashboardLegalAidRoute = DashboardLegalAidRouteImport.update({
   path: '/legal-aid',
   getParentRoute: () => DashboardRoute,
 } as any)
-const DashboardClaimsRoute = DashboardClaimsRouteImport.update({
-  id: '/claims',
-  path: '/claims',
+const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardSupportRoute = DashboardSupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const DashboardVaultRoute = DashboardVaultRouteImport.update({
+  id: '/vault',
+  path: '/vault',
+  getParentRoute: () => DashboardRoute,
+} as any)
+const ReviewerIndexRoute = ReviewerIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ReviewerRoute,
+} as any)
+const ReviewerQueueRoute = ReviewerQueueRouteImport.update({
+  id: '/queue',
+  path: '/queue',
+  getParentRoute: () => ReviewerRoute,
 } as any)
 const DashboardCasesNewIndexRoute = DashboardCasesNewIndexRouteImport.update({
   id: '/cases/new/',
@@ -214,32 +214,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sign-up': {
-      id: '/sign-up'
-      path: '/sign-up'
-      fullPath: '/sign-up'
-      preLoaderRoute: typeof SignUpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sign-in': {
-      id: '/sign-in'
-      path: '/sign-in'
-      fullPath: '/sign-in'
-      preLoaderRoute: typeof SignInRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reviewer': {
-      id: '/reviewer'
-      path: '/reviewer'
-      fullPath: '/reviewer'
-      preLoaderRoute: typeof ReviewerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin': {
@@ -249,19 +228,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/reviewer/': {
-      id: '/reviewer/'
-      path: '/'
-      fullPath: '/reviewer/'
-      preLoaderRoute: typeof ReviewerIndexRouteImport
-      parentRoute: typeof ReviewerRoute
+    '/reviewer': {
+      id: '/reviewer'
+      path: '/reviewer'
+      fullPath: '/reviewer'
+      preLoaderRoute: typeof ReviewerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-in': {
+      id: '/sign-in'
+      path: '/sign-in'
+      fullPath: '/sign-in'
+      preLoaderRoute: typeof SignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sign-up': {
+      id: '/sign-up'
+      path: '/sign-up'
+      fullPath: '/sign-up'
+      preLoaderRoute: typeof SignUpRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/dashboard/': {
       id: '/dashboard/'
@@ -270,32 +263,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardIndexRouteImport
       parentRoute: typeof DashboardRoute
     }
-    '/reviewer/queue': {
-      id: '/reviewer/queue'
-      path: '/queue'
-      fullPath: '/reviewer/queue'
-      preLoaderRoute: typeof ReviewerQueueRouteImport
-      parentRoute: typeof ReviewerRoute
-    }
-    '/dashboard/vault': {
-      id: '/dashboard/vault'
-      path: '/vault'
-      fullPath: '/dashboard/vault'
-      preLoaderRoute: typeof DashboardVaultRouteImport
-      parentRoute: typeof DashboardRoute
-    }
-    '/dashboard/support': {
-      id: '/dashboard/support'
-      path: '/support'
-      fullPath: '/dashboard/support'
-      preLoaderRoute: typeof DashboardSupportRouteImport
-      parentRoute: typeof DashboardRoute
-    }
-    '/dashboard/settings': {
-      id: '/dashboard/settings'
-      path: '/settings'
-      fullPath: '/dashboard/settings'
-      preLoaderRoute: typeof DashboardSettingsRouteImport
+    '/dashboard/claims': {
+      id: '/dashboard/claims'
+      path: '/claims'
+      fullPath: '/dashboard/claims'
+      preLoaderRoute: typeof DashboardClaimsRouteImport
       parentRoute: typeof DashboardRoute
     }
     '/dashboard/legal-aid': {
@@ -305,12 +277,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardLegalAidRouteImport
       parentRoute: typeof DashboardRoute
     }
-    '/dashboard/claims': {
-      id: '/dashboard/claims'
-      path: '/claims'
-      fullPath: '/dashboard/claims'
-      preLoaderRoute: typeof DashboardClaimsRouteImport
+    '/dashboard/settings': {
+      id: '/dashboard/settings'
+      path: '/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof DashboardSettingsRouteImport
       parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/support': {
+      id: '/dashboard/support'
+      path: '/support'
+      fullPath: '/dashboard/support'
+      preLoaderRoute: typeof DashboardSupportRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/vault': {
+      id: '/dashboard/vault'
+      path: '/vault'
+      fullPath: '/dashboard/vault'
+      preLoaderRoute: typeof DashboardVaultRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/reviewer/': {
+      id: '/reviewer/'
+      path: '/'
+      fullPath: '/reviewer/'
+      preLoaderRoute: typeof ReviewerIndexRouteImport
+      parentRoute: typeof ReviewerRoute
+    }
+    '/reviewer/queue': {
+      id: '/reviewer/queue'
+      path: '/queue'
+      fullPath: '/reviewer/queue'
+      preLoaderRoute: typeof ReviewerQueueRouteImport
+      parentRoute: typeof ReviewerRoute
     }
     '/dashboard/cases/new/': {
       id: '/dashboard/cases/new/'

@@ -1,0 +1,36 @@
+version: 2
+updates:
+  # Maintain dependencies for npm (Root)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # Maintain dependencies for npm (Frontend Web App)
+  - package-ecosystem: "npm"
+    directory: "/apps/web"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # Maintain dependencies for Go (Core API)
+  - package-ecosystem: "gomod"
+    directory: "/apps/api"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # Maintain dependencies for Python (AI-Worker)
+  - package-ecosystem: "pip"
+    directory: "/apps/ai-worker"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # Maintain GitHub Actions dependencies
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10

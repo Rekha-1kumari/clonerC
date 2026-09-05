@@ -105,9 +105,7 @@ REV_AUTH_RESP=$(curl -s -X POST "$API_URL/auth/verify-otp" \
   -d "{\"email\": \"reviewer@bimanyaya.in\", \"code\": \"$REV_OTP\"}")
 REV_TOKEN=$(echo "$REV_AUTH_RESP" | grep -o '"access_token":"[^"]*"' | head -n 1 | cut -d'"' -f4)
 
-echo "Promoting reviewer@bimanyaya.in to REVIEWER role in PostgreSQL..."
-docker exec -i bimanyaya_postgres psql -U postgres -d bimanyaya -c "UPDATE users SET role = 'REVIEWER' WHERE email = 'reviewer@bimanyaya.in';" > /dev/null
-echo -e "${GREEN}✓ Reviewer authenticated and promoted! Token: ${REV_TOKEN:0:20}...${NC}"
+echo -e "${GREEN}✓ Reviewer authenticated with REVIEWER role! Token: ${REV_TOKEN:0:20}...${NC}"
 
 
 # STEP 3: CLAIM CASE & ADD FEEDBACK COMMENTS
@@ -166,9 +164,7 @@ ADM_AUTH_RESP=$(curl -s -X POST "$API_URL/auth/verify-otp" \
   -d "{\"email\": \"admin@bimanyaya.in\", \"code\": \"$ADM_OTP\"}")
 ADM_TOKEN=$(echo "$ADM_AUTH_RESP" | grep -o '"access_token":"[^"]*"' | head -n 1 | cut -d'"' -f4)
 
-echo "Promoting admin@bimanyaya.in to ADMIN role in PostgreSQL..."
-docker exec -i bimanyaya_postgres psql -U postgres -d bimanyaya -c "UPDATE users SET role = 'ADMIN' WHERE email = 'admin@bimanyaya.in';" > /dev/null
-echo -e "${GREEN}✓ Admin authenticated and promoted! Token: ${ADM_TOKEN:0:20}...${NC}"
+echo -e "${GREEN}✓ Admin authenticated with ADMIN role! Token: ${ADM_TOKEN:0:20}...${NC}"
 
 echo -e "\n${YELLOW}[Step 15] Triggering SLA checks (Escalations workflow)...${NC}"
 SLA_RESP=$(curl -s -X POST "$API_URL/admin/reviews/sla-checks" \

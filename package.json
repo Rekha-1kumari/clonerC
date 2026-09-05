@@ -1,18 +1,26 @@
 {
-  "name": "bimanyaya-convex",
+  "name": "bimanyaya-monorepo",
   "version": "1.0.0",
-  "description": "BimaNyaya Convex Backend Integration",
-  "main": "index.js",
+  "private": true,
+  "description": "BimaNyaya - AI-Powered Insurance Grievance Redressal Platform",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "convex:dev": "convex dev",
-    "convex:deploy": "convex deploy",
+    "dev": "npm run dev --prefix apps/web",
     "build": "npm run build --prefix apps/web",
-    "dev": "npm run dev --prefix apps/web"
+    "test": "npm run test --prefix apps/web && (cd apps/api && go test ./...) && (cd apps/ai-worker && python3 -m pytest)",
+    "test:web": "npm run test --prefix apps/web",
+    "test:api": "cd apps/api && go test -v ./...",
+    "test:worker": "cd apps/ai-worker && python3 -m pytest -v",
+    "convex:dev": "npx convex dev",
+    "convex:deploy": "npx convex deploy"
   },
   "dependencies": {
-    "convex": "^1.11.0"
+    "convex": "^1.42.1"
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.9.3"
   }
 }
+

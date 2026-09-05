@@ -1,7 +1,15 @@
 import os
 import re
-import fitz  # PyMuPDF
-import pdfplumber
+try:
+    import fitz  # PyMuPDF
+except ImportError:
+    fitz = None
+
+try:
+    import pdfplumber
+except ImportError:
+    pdfplumber = None
+
 import logging
 import requests
 import time

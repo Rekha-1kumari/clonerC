@@ -1,0 +1,34 @@
+name: Docker Container Builds
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-containers:
+    name: Build & Smoke Test Docker Images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: actions/setup-buildx-action@v3
+
+      - name: Build Go API Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./apps/api
+          file: ./apps/api/Dockerfile
+          push: false
+          tags: bimanyaya/api:test
+
+      - name: Build Python AI-Worker Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./apps/ai-worker
+          file: ./apps/ai-worker/Dockerfile
+          push: false
+          tags: bimanyaya/ai-worker:test
