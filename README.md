@@ -6,9 +6,10 @@
 
 ### AI-Powered Insurance Grievance Redressal & Claim Dispute Resolution Platform
 
-[![CI Matrix](https://github.com/JayantShoundik/BimaNyaya/actions/workflows/ci.yml/badge.svg)](https://github.com/JayantShoundik/BimaNyaya/actions/workflows/ci.yml)
-[![Docker Builds](https://github.com/JayantShoundik/BimaNyaya/actions/workflows/docker-build.yml/badge.svg)](https://github.com/JayantShoundik/BimaNyaya/actions/workflows/docker-build.yml)
-[![CodeQL Security](https://github.com/JayantShoundik/BimaNyaya/actions/workflows/codeql.yml/badge.svg)](https://github.com/JayantShoundik/BimaNyaya/actions/workflows/codeql.yml)
+[![CI Matrix](https://github.com/Rekha-1kumari/clonerC/actions/workflows/ci.yml/badge.svg)](https://github.com/Rekha-1kumari/clonerC/actions/workflows/ci.yml)
+[![Docker Builds](https://github.com/Rekha-1kumari/clonerC/actions/workflows/docker-build.yml/badge.svg)](https://github.com/Rekha-1kumari/clonerC/actions/workflows/docker-build.yml)
+[![CodeQL Security](https://github.com/Rekha-1kumari/clonerC/actions/workflows/codeql.yml/badge.svg)](https://github.com/Rekha-1kumari/clonerC/actions/workflows/codeql.yml)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 [![Go 1.25+](https://img.shields.io/badge/Go-1.25+-00ADD8?logo=go&logoColor=white)](https://go.dev/)
 [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
