@@ -223,11 +223,13 @@ chmod +x test_reviewer_features.sh
 
 For in-depth technical guides, explore the `docs/` repository:
 
+- 🎬 **[Demo Storyboard & Business Proposal](docs/DEMO_AND_BUSINESS_PROPOSAL.md)**: Video production script, scene storyboard, TAM/SAM/SOM market analysis, and commercial proposal.
 - 🏛 **[Architecture & Design Blueprint](docs/ARCHITECTURE.md)**: Deep dive into microservices, data models, state machines, and RAG pipelines.
 - 📡 **[API Reference Specification](docs/API_REFERENCE.md)**: Exhaustive documentation of all REST and Convex API endpoints.
 - 🔄 **[Developer Workflow Guide](docs/WORKFLOW_GUIDE.md)**: Branch strategies, local simulation workflows, and CI/CD pipelines.
 - 🤝 **[Contributing Guidelines](CONTRIBUTING.md)**: Contribution standards, code style, and PR requirements.
 - 🛡 **[Security Policy](SECURITY.md)**: Security standards, threat model, and vulnerability reporting.
+
 
 ---
 
