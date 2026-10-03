@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Rekha Kumari Responsive Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header-sticky">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-logo-icon">R</div>
+        <span>Rekha Kumari</span>
+      </a>
+
+      <ul class="nav-links-desktop">
+        <li><a href="index.html" class="nav-item-link">Home</a></li>
+        <li><a href="about.html" class="nav-item-link active">About</a></li>
+        <li><a href="projects.html" class="nav-item-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-item-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Color Theme">
+          <span aria-hidden="true">&#9790;</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Open mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-overlay"></div>
+  <aside class="mobile-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span class="brand-wrapper"><span class="brand-logo-icon">R</span> Rekha</span>
+      <button class="drawer-close-btn" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--text-main);">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-wrapper">
+    <section style="margin-bottom: 3rem;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Career Trajectory & <span class="gradient-text">Milestones</span></h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 700px;">
+        Tracking the journey from foundational computer science principles through advanced responsive architecture and full-stack software development.
+      </p>
+    </section>
+
+    <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem;">
+      
+      <!-- Timeline -->
+      <section class="bento-tile" style="padding: 2.5rem;">
+        <h2 style="margin-bottom: 2rem;">Internship Progression Timeline</h2>
+        
+        <div class="timeline-vertical">
+          <div class="timeline-step">
+            <span class="tag">Week 1 &bull; Oct 2026</span>
+            <h3 style="margin-top: 0.4rem;">HTML5 Semantic Structure & Accessibility</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Built multi-page semantic tree adhering to WCAG 2.1 AAA guidelines with 100/100 Lighthouse benchmark.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <span class="tag">Week 2 &bull; Oct 2026</span>
+            <h3 style="margin-top: 0.4rem;">Advanced CSS3 & Responsive Architecture</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Implemented CSS Grid 2D bento layouts, dynamic custom property theming, and mobile-first responsive media queries.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <span class="tag">Week 3 &bull; Oct 2026</span>
+            <h3 style="margin-top: 0.4rem;">JavaScript Logic & State Management</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Engineered client-side task engine with full CRUD, localStorage persistence, event delegation, and progress counters.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <span class="tag">Week 4 &bull; Oct 2026</span>
+            <h3 style="margin-top: 0.4rem;">Asynchronous JS & RESTful APIs</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Connected real-time Open-Meteo REST API with async/await, geolocation coordinates, and offline error resilience.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <span class="tag">Week 5 &bull; Nov 2026</span>
+            <h3 style="margin-top: 0.4rem;">Full-Stack Capstone E-Commerce Platform</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              Modular Single Page Application architecture with client-side hash routing, reactive shopping cart, and multi-step checkout.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer-responsive">
+    <div class="footer-bottom-bar">
+      <span>&copy; 2026 Rekha Kumari. Web Development Internship Week 2.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

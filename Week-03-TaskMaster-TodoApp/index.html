@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster Pro | State-Driven Task Management</title>
+  <meta name="description" content="Stateful client-side task engine with full CRUD operations, localStorage persistence, category filters, and progress metrics.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top App Navigation -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="app-brand">
+        <div class="brand-icon">&#10004;</div>
+        <span>TaskMaster Pro</span>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn-icon" id="export-tasks-btn" title="Export Tasks Backup as JSON">
+          &#128190;
+        </button>
+        <button class="btn-icon" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          &#9728;
+        </button>
+        <a href="../index.html" class="btn-icon" title="Return to Internship Hub">
+          &#8962;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-main">
+    
+    <!-- Real-Time Metrics & Progress -->
+    <section class="metrics-card">
+      <div class="metrics-header">
+        <div>
+          <h2 style="font-size: 1.3rem;">Productivity Pulse</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Real-time task completion tracking</p>
+        </div>
+        <div style="font-size: 1.5rem; font-weight: 800; font-family: var(--font-heading); color: var(--primary);" id="completion-rate">
+          0%
+        </div>
+      </div>
+
+      <div class="progress-track" aria-label="Task completion progress">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-val" id="total-tasks-count">0</div>
+          <div class="stat-lbl">Total Tasks</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val" style="color: #10b981;" id="completed-tasks-count">0</div>
+          <div class="stat-lbl">Completed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val" style="color: #f59e0b;" id="pending-tasks-count">0</div>
+          <div class="stat-lbl">In Progress</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls: Search & Multi-Level Filters -->
+    <section class="controls-card">
+      <div class="search-input-wrap">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" id="search-input" placeholder="Search tasks by title, description, or category (Press '/' to focus)...">
+      </div>
+
+      <div class="filters-row">
+        <!-- Status Tabs -->
+        <div class="filter-pills">
+          <button class="pill-btn active" data-filter="all">All Tasks</button>
+          <button class="pill-btn" data-filter="active">Active</button>
+          <button class="pill-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Dropdowns -->
+        <div class="filter-selects">
+          <select class="select-ctrl" id="category-filter" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+            <option value="Work">Work</option>
+            <option value="Study">Study</option>
+            <option value="Personal">Personal</option>
+          </select>
+
+          <select class="select-ctrl" id="priority-filter" aria-label="Filter by priority">
+            <option value="all">All Priorities</option>
+            <option value="High">High Priority</option>
+            <option value="Medium">Medium Priority</option>
+            <option value="Low">Low Priority</option>
+          </select>
+
+          <select class="select-ctrl" id="sort-filter" aria-label="Sort tasks">
+            <option value="created-desc">Newest First</option>
+            <option value="due-asc">Due Date (Earliest)</option>
+            <option value="priority-desc">Priority (High to Low)</option>
+            <option value="alpha-asc">Alphabetical (A-Z)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button class="btn btn-primary" id="open-modal-btn">
+        <span>+</span> Add New Task
+      </button>
+
+      <button class="btn btn-danger-outline" id="clear-completed-btn">
+        Clear Completed
+      </button>
+    </div>
+
+    <!-- Task List (Delegated Container) -->
+    <section class="task-list" id="task-list"></section>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="empty-state" style="display: none;">
+      <div class="empty-state-icon">&#128221;</div>
+      <h3>No tasks match your criteria</h3>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Try adjusting your filters or click "+ Add New Task" to create one.</p>
+    </div>
+
+  </main>
+
+  <!-- Create / Edit Task Modal -->
+  <div class="modal-overlay" id="task-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Create New Task</h3>
+        <button id="close-modal-btn" style="background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer;">&times;</button>
+      </div>
+
+      <form id="task-form">
+        <div class="form-group">
+          <label for="form-task-title">Task Title *</label>
+          <input type="text" id="form-task-title" required placeholder="e.g. Implement REST API endpoints">
+        </div>
+
+        <div class="form-group">
+          <label for="form-task-desc">Description</label>
+          <textarea id="form-task-desc" rows="3" placeholder="Provide extra context, steps or notes..."></textarea>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label for="form-task-category">Category</label>
+            <select id="form-task-category">
+              <option value="Work">Work</option>
+              <option value="Study">Study</option>
+              <option value="Personal">Personal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="form-task-priority">Priority</label>
+            <select id="form-task-priority">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="form-task-date">Due Date</label>
+          <input type="date" id="form-task-date">
+        </div>
+
+        <div class="form-group">
+          <label for="form-task-subtasks">Subtask Checklist (One per line)</label>
+          <textarea id="form-task-subtasks" rows="3" placeholder="Step 1&#10;Step 2&#10;Step 3"></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1.5rem;">
+          <button type="button" class="btn" id="cancel-modal-btn" style="background: var(--bg-input); border: 1px solid var(--border-color); color: var(--text-main);">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">
+            Save Task
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="toast-notice"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

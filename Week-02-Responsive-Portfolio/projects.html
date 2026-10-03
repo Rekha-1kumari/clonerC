@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Showcase | Rekha Kumari Responsive Architecture</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header-sticky">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-logo-icon">R</div>
+        <span>Rekha Kumari</span>
+      </a>
+
+      <ul class="nav-links-desktop">
+        <li><a href="index.html" class="nav-item-link">Home</a></li>
+        <li><a href="about.html" class="nav-item-link">About</a></li>
+        <li><a href="projects.html" class="nav-item-link active">Projects</a></li>
+        <li><a href="contact.html" class="nav-item-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Color Theme">
+          <span aria-hidden="true">&#9790;</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Open mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-overlay"></div>
+  <aside class="mobile-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span class="brand-wrapper"><span class="brand-logo-icon">R</span> Rekha</span>
+      <button class="drawer-close-btn" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--text-main);">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-wrapper">
+    <section style="margin-bottom: 2.5rem;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">All Internship <span class="gradient-text">Deliverables</span></h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem;">
+        5 weeks of production-grade engineering, organized and accessible directly.
+      </p>
+    </section>
+
+    <div class="projects-responsive-grid">
+      
+      <!-- Week 1 -->
+      <article class="project-card">
+        <div class="card-preview-media">
+          <span class="preview-badge">Week 1 &bull; 10 Oct 2026</span>
+          <div style="font-size: 3rem;">&#9874;</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Semantic Portfolio Skeleton</h3>
+          <p class="card-text">
+            Strict HTML5 semantic tags, ARIA landmarks, WCAG 2.1 AAA accessibility contrast, and 100/100 Lighthouse score.
+          </p>
+          <ul class="card-tags">
+            <li class="tag">Semantic HTML5</li>
+            <li class="tag">WCAG 2.1 AAA</li>
+            <li class="tag">JSON-LD Schema</li>
+          </ul>
+          <a href="../Week-01-Semantic-Portfolio/index.html" class="btn btn-primary" style="width: 100%;">View Week 1 Project</a>
+        </div>
+      </article>
+
+      <!-- Week 2 -->
+      <article class="project-card">
+        <div class="card-preview-media">
+          <span class="preview-badge">Week 2 &bull; 17 Oct 2026</span>
+          <div style="font-size: 3rem;">&#127912;</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Advanced CSS3 & Responsive Architecture</h3>
+          <p class="card-text">
+            CSS Grid 2D layouts, custom properties dynamic theming (dark/light), glassmorphic design, and mobile-first media queries.
+          </p>
+          <ul class="card-tags">
+            <li class="tag">CSS Grid 2D</li>
+            <li class="tag">CSS Variables</li>
+            <li class="tag">Dark / Light</li>
+          </ul>
+          <a href="index.html" class="btn btn-primary" style="width: 100%;">View Current Project</a>
+        </div>
+      </article>
+
+      <!-- Week 3 -->
+      <article class="project-card">
+        <div class="card-preview-media">
+          <span class="preview-badge">Week 3 &bull; 24 Oct 2026</span>
+          <div style="font-size: 3rem;">&#9989;</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">TaskMaster State Management</h3>
+          <p class="card-text">
+            Full client-side CRUD task manager with localStorage persistence, priority filtering, subtask checklists, and celebration effects.
+          </p>
+          <ul class="card-tags">
+            <li class="tag">CRUD</li>
+            <li class="tag">LocalStorage</li>
+            <li class="tag">Event Delegation</li>
+          </ul>
+          <a href="../Week-03-TaskMaster-TodoApp/index.html" class="btn btn-primary" style="width: 100%;">Launch TaskMaster</a>
+        </div>
+      </article>
+
+      <!-- Week 4 -->
+      <article class="project-card">
+        <div class="card-preview-media">
+          <span class="preview-badge">Week 4 &bull; 31 Oct 2026</span>
+          <div style="font-size: 3rem;">&#127780;</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">WeatherPulse RESTful Dashboard</h3>
+          <p class="card-text">
+            Real-time meteorological dashboard consuming Open-Meteo REST APIs using async/await with geolocation and offline error resilience.
+          </p>
+          <ul class="card-tags">
+            <li class="tag">Fetch API</li>
+            <li class="tag">Async / Await</li>
+            <li class="tag">Geolocation</li>
+          </ul>
+          <a href="../Week-04-WeatherPulse-Dashboard/index.html" class="btn btn-primary" style="width: 100%;">Launch WeatherPulse</a>
+        </div>
+      </article>
+
+      <!-- Week 5 -->
+      <article class="project-card">
+        <div class="card-preview-media">
+          <span class="preview-badge">Week 5 &bull; 02 Nov 2026</span>
+          <div style="font-size: 3rem;">&#128722;</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">AuraMart Capstone E-Commerce Platform</h3>
+          <p class="card-text">
+            Single Page Application with hash routing, multi-criteria filters, sliding cart drawer, and interactive multi-step checkout simulation.
+          </p>
+          <ul class="card-tags">
+            <li class="tag">SPA Hash Router</li>
+            <li class="tag">Reactive State</li>
+            <li class="tag">Checkout Flow</li>
+          </ul>
+          <a href="../Week-05-AuraMart-Ecommerce-Capstone/index.html" class="btn btn-primary" style="width: 100%;">Launch AuraMart</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer-responsive">
+    <div class="footer-bottom-bar">
+      <span>&copy; 2026 Rekha Kumari. Web Development Internship Week 2.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Rekha Kumari Responsive Architecture</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header-sticky">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-logo-icon">R</div>
+        <span>Rekha Kumari</span>
+      </a>
+
+      <ul class="nav-links-desktop">
+        <li><a href="index.html" class="nav-item-link">Home</a></li>
+        <li><a href="about.html" class="nav-item-link">About</a></li>
+        <li><a href="projects.html" class="nav-item-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-item-link active">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Color Theme">
+          <span aria-hidden="true">&#9790;</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Open mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-overlay"></div>
+  <aside class="mobile-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span class="brand-wrapper"><span class="brand-logo-icon">R</span> Rekha</span>
+      <button class="drawer-close-btn" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--text-main);">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-wrapper">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Let's Connect & <span class="gradient-text">Collaborate</span></h1>
+      <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto;">
+        Reach out for inquiries regarding frontend architecture, responsive design, or engineering opportunities.
+      </p>
+    </div>
+
+    <div class="glass-form-card">
+      <div id="contact-toast" style="display: none; padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #10b981; font-weight: 600;"></div>
+
+      <form id="contact-form-responsive">
+        <div class="form-floating-group">
+          <label for="contact-name">Full Name</label>
+          <input type="text" id="contact-name" required placeholder="Rekha Kumari">
+        </div>
+
+        <div class="form-floating-group">
+          <label for="contact-email">Email Address</label>
+          <input type="email" id="contact-email" required placeholder="rekha.kumari.dev@gmail.com">
+        </div>
+
+        <div class="form-floating-group">
+          <label for="contact-topic">Inquiry Topic</label>
+          <select id="contact-topic" required>
+            <option value="">-- Choose Subject --</option>
+            <option value="internship">Web Development Internship Feedback</option>
+            <option value="collaboration">Full-Stack Project Collaboration</option>
+            <option value="job">Software Engineering Opportunity</option>
+          </select>
+        </div>
+
+        <div class="form-floating-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" rows="5" required placeholder="Type your message here..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          Submit Message
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer-responsive">
+    <div class="footer-bottom-bar">
+      <span>&copy; 2026 Rekha Kumari. Web Development Internship Week 2.</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contact-form-responsive').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const toast = document.getElementById('contact-toast');
+      const name = document.getElementById('contact-name').value;
+      toast.style.display = 'block';
+      toast.innerHTML = `&#10003; Thank you ${name}! Your inquiry has been submitted successfully.`;
+      this.reset();
+    });
+  </script>
+</body>
+</html>

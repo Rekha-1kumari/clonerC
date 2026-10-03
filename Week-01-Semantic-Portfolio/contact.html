@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Contact | Rekha Kumari</title>
+  <meta name="description" content="Get in touch with Rekha Kumari through an accessible, tab-navigable contact form adhering to WCAG 2.1 AAA accessibility.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rekha-kumari.dev/contact.html">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-container">
+      <a href="index.html" class="brand-link" aria-label="Rekha Kumari Portfolio Homepage">
+        <span>Rekha Kumari</span>
+        <span class="brand-badge">Internship</span>
+      </a>
+
+      <nav class="main-navigation" role="navigation" aria-label="Primary Site Navigation">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" role="main">
+    
+    <div class="contact-container">
+      
+      <section aria-labelledby="contact-heading">
+        <h1 id="contact-heading">Accessible Contact Form</h1>
+        <p class="hero-lead">
+          Have an inquiry, opportunity, or feedback? Please fill out the form below. This form is fully keyboard-navigable and screen-reader accessible.
+        </p>
+
+        <!-- Live feedback region for screen readers -->
+        <div id="form-feedback" class="alert-message" role="alert" aria-live="polite"></div>
+
+        <form id="accessible-contact-form" action="#" method="POST" novalidate>
+          
+          <fieldset>
+            <legend>Personal Information</legend>
+            
+            <div class="form-field">
+              <label for="user-name">
+                Full Name <span class="required-mark" aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
+              </label>
+              <input 
+                type="text" 
+                id="user-name" 
+                name="name" 
+                required 
+                aria-required="true"
+                autocomplete="name"
+                aria-describedby="name-hint"
+                placeholder="e.g. John Doe">
+              <p id="name-hint" class="field-hint">Please enter your given and family names.</p>
+            </div>
+
+            <div class="form-field">
+              <label for="user-email">
+                Email Address <span class="required-mark" aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
+              </label>
+              <input 
+                type="email" 
+                id="user-email" 
+                name="email" 
+                required 
+                aria-required="true"
+                autocomplete="email"
+                aria-describedby="email-hint"
+                placeholder="e.g. john@example.com">
+              <p id="email-hint" class="field-hint">We will only use this email to respond to your inquiry.</p>
+            </div>
+
+            <div class="form-field">
+              <label for="user-phone">
+                Phone Number <span style="font-weight: 400; color: var(--color-text-muted);">(optional)</span>
+              </label>
+              <input 
+                type="tel" 
+                id="user-phone" 
+                name="phone" 
+                autocomplete="tel"
+                aria-describedby="phone-hint"
+                placeholder="e.g. +91 98765 43210">
+              <p id="phone-hint" class="field-hint">Include country code for international inquiries.</p>
+            </div>
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Inquiry Details</legend>
+            
+            <div class="form-field">
+              <label for="inquiry-subject">
+                Subject Category <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <select id="inquiry-subject" name="subject" required aria-required="true">
+                <option value="">-- Select inquiry topic --</option>
+                <option value="internship">Web Development Internship Feedback</option>
+                <option value="job">Full-Time / Contract Engineering Role</option>
+                <option value="project">Project Collaboration</option>
+                <option value="other">General Question</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="user-message">
+                Your Message <span class="required-mark" aria-hidden="true">*</span>
+                <span class="sr-only">(required)</span>
+              </label>
+              <textarea 
+                id="user-message" 
+                name="message" 
+                rows="6" 
+                required 
+                aria-required="true"
+                aria-describedby="message-hint"
+                placeholder="Please describe your project, proposal, or inquiry in detail..."></textarea>
+              <p id="message-hint" class="field-hint">Minimum 10 characters.</p>
+            </div>
+
+          </fieldset>
+
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <button type="submit" class="btn btn-primary" id="submit-button">
+              Send Message
+            </button>
+            <button type="reset" class="btn btn-outline">
+              Clear Form
+            </button>
+          </div>
+
+        </form>
+
+      </section>
+
+      <!-- Direct Contact Semantic Aside -->
+      <aside class="sidebar-box" style="margin-top: 2.5rem;" aria-labelledby="direct-contact-heading">
+        <h2 id="direct-contact-heading">Alternative Contact Information</h2>
+        <address style="font-style: normal; color: var(--color-text-muted); line-height: 1.8;">
+          <p><strong>Direct Inquiries:</strong> <a href="mailto:rekha.kumari.dev@gmail.com" style="color: var(--color-primary);">rekha.kumari.dev@gmail.com</a></p>
+          <p><strong>GitHub Profile:</strong> <a href="https://github.com/Rekha-1kumari" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">github.com/Rekha-1kumari</a></p>
+          <p><strong>Office Hours:</strong> Monday &ndash; Friday, 9:00 AM &ndash; 6:00 PM IST</p>
+        </address>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Rekha Kumari</h3>
+        <p style="color: #94a3b8;">Crafting accessible, high-performance web systems.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p style="color: #94a3b8;">Email: <a href="mailto:rekha.kumari.dev@gmail.com" style="color: #60a5fa;">rekha.kumari.dev@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rekha Kumari. Web Development Internship.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Accessible Client-Side Validation Feedback
+    const form = document.getElementById('accessible-contact-form');
+    const feedback = document.getElementById('form-feedback');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('user-name').value.trim();
+      const email = document.getElementById('user-email').value.trim();
+      const subject = document.getElementById('inquiry-subject').value;
+      const message = document.getElementById('user-message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        feedback.className = 'alert-message';
+        feedback.style.backgroundColor = 'var(--color-error-bg)';
+        feedback.style.color = 'var(--color-error)';
+        feedback.style.border = '1px solid #f87171';
+        feedback.style.display = 'block';
+        feedback.innerHTML = '<strong>Error:</strong> Please fill out all required fields marked with an asterisk (*).';
+        feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Successful accessible submission
+      feedback.className = 'alert-message success';
+      feedback.style.display = 'block';
+      feedback.innerHTML = `<strong>Success!</strong> Thank you, ${name}. Your message has been received. We will contact you at ${email} shortly.`;
+      form.reset();
+      feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+
+</body>
+</html>

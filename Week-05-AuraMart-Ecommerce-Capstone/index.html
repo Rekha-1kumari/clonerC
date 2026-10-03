@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraMart | Next-Gen E-Commerce Capstone SPA</title>
+  <meta name="description" content="Single Page Application e-commerce architecture with client-side hash routing, reactive shopping cart store, promo code engine, and multi-step checkout simulation.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Sticky Application Navbar -->
+  <header class="app-header">
+    <div class="header-inner">
+      <a href="#/" class="brand-box">
+        <div class="brand-icon">&#128722;</div>
+        <span>AuraMart</span>
+      </a>
+
+      <!-- Client-side navigation -->
+      <ul class="nav-links">
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/products">Products Catalog</a></li>
+        <li><a href="#/wishlist">Wishlist</a></li>
+        <li><a href="#/cart">Cart</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <!-- Wishlist Shortcut -->
+        <a href="#/wishlist" class="btn-circle" title="View Wishlist">
+          &#9829;
+          <span class="badge-counter" id="wishlist-badge">0</span>
+        </a>
+
+        <!-- Cart Drawer Trigger -->
+        <button class="btn-circle" id="open-cart-btn" title="Open Shopping Cart">
+          &#128722;
+          <span class="badge-counter" id="cart-badge">0</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="btn-circle" id="theme-toggle-btn" title="Toggle Theme">
+          &#9728;
+        </button>
+
+        <!-- Hub Shortcut -->
+        <a href="../index.html" class="btn-circle" title="Internship Overview Hub">
+          &#8962;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SPA View Mount Root -->
+  <main class="spa-container" id="app-root"></main>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">Shopping Cart</h3>
+      <button id="close-cart-btn" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--text-main);">&times;</button>
+    </div>
+
+    <div class="cart-items-container" id="drawer-items"></div>
+
+    <div class="cart-drawer-footer">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem; font-size: 1.2rem; font-weight: 800;">
+        <span>Total:</span>
+        <span style="color: var(--primary);" id="drawer-subtotal">$0.00</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="#/checkout" class="btn btn-primary" onclick="document.getElementById('cart-drawer').classList.remove('open'); document.getElementById('cart-drawer-overlay').classList.remove('active');">
+          Proceed to Checkout
+        </a>
+        <a href="#/cart" class="btn btn-secondary" onclick="document.getElementById('cart-drawer').classList.remove('open'); document.getElementById('cart-drawer-overlay').classList.remove('active');">
+          View Cart Details
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Global Toast Notification -->
+  <div class="toast-msg" id="toast-msg"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>AuraMart Ecosystem</strong> &bull; Web Development Capstone Project
+      </div>
+      <div>
+        <span>Developer: Rekha Kumari &bull; Single Page Application Architecture</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/productsData.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

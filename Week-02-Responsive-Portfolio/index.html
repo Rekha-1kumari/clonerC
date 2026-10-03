@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekha Kumari | Advanced Responsive Portfolio</title>
+  <meta name="description" content="Next-generation responsive portfolio showcasing CSS Grid 2D architectures, dynamic theme switching, and glassmorphic micro-interactions.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Glassmorphic Navbar -->
+  <header class="header-sticky">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-logo-icon">R</div>
+        <span>Rekha Kumari</span>
+      </a>
+
+      <!-- Desktop Navigation Links (Flexbox) -->
+      <ul class="nav-links-desktop">
+        <li><a href="index.html" class="nav-item-link active">Home</a></li>
+        <li><a href="about.html" class="nav-item-link">About</a></li>
+        <li><a href="projects.html" class="nav-item-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-item-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Dynamic Dark/Light Theme Switcher -->
+        <button class="theme-toggle-btn" aria-label="Toggle Color Theme">
+          <span aria-hidden="true">&#9790;</span>
+        </button>
+
+        <!-- Mobile Hamburger Trigger -->
+        <button class="hamburger-btn" aria-label="Open mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span class="brand-wrapper"><span class="brand-logo-icon">R</span> Rekha</span>
+      <button class="drawer-close-btn" style="background: none; border: none; font-size: 1.8rem; cursor: pointer; color: var(--text-main);">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+    
+    <!-- 2D CSS GRID: Bento Hero Grid -->
+    <section class="bento-hero-grid">
+      
+      <!-- Bento Tile 1: Primary Hero Banner -->
+      <div class="bento-tile bento-tile-main">
+        <div>
+          <div class="status-badge">
+            <span class="status-dot"></span> Available for Web Engineering Roles
+          </div>
+          <h1 class="bento-title">
+            Architecting <span class="gradient-text">Visually Stunning</span> & Fully Responsive Experiences
+          </h1>
+          <p class="bento-desc">
+            Transforming semantic document foundations into high-performance, fluid interfaces with CSS Grid 2D layouts, CSS custom properties, and state-of-the-art responsive architectures.
+          </p>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="projects.html" class="btn btn-primary">Explore 5-Week Portfolio</a>
+          <a href="contact.html" class="btn btn-glass">Discuss Collaboration</a>
+        </div>
+      </div>
+
+      <!-- Bento Tile 2: Metrics & Stats -->
+      <div class="bento-tile">
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Internship Benchmarks</h3>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number">5/5</div>
+            <div class="stat-label">Milestones</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Responsive</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">AAA</div>
+            <div class="stat-label">WCAG Contrast</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">60fps</div>
+            <div class="stat-label">Animations</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento Tile 3: Responsive Architecture Spec -->
+      <div class="bento-tile">
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.75rem;">Adaptive Layouts</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          Fluidly recalibrates from ultra-wide displays down to 360px mobile viewports using CSS Grid auto-fit tracks and mobile-first media queries.
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="tag">Mobile: &lt;640px</span>
+          <span class="tag">Tablet: 768px</span>
+          <span class="tag">Desktop: 1024px+</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Interactive Skills Matrix Grid -->
+    <section style="margin-bottom: 3.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 1rem;">
+        <h2>Interactive Technology Stack</h2>
+        <span style="color: var(--text-subtle); font-size: 0.95rem;">Hover cards for visual micro-glow</span>
+      </div>
+
+      <div class="skills-interactive-grid">
+        <div class="skill-chip">
+          <span class="skill-icon">&#9881;</span>
+          <span class="skill-name">CSS Grid 2D</span>
+        </div>
+        <div class="skill-chip">
+          <span class="skill-icon">&#9782;</span>
+          <span class="skill-name">Flexbox</span>
+        </div>
+        <div class="skill-chip">
+          <span class="skill-icon">&#127912;</span>
+          <span class="skill-name">CSS Variables</span>
+        </div>
+        <div class="skill-chip">
+          <span class="skill-icon">&#128241;</span>
+          <span class="skill-name">Mobile-First</span>
+        </div>
+        <div class="skill-chip">
+          <span class="skill-icon">&#9889;</span>
+          <span class="skill-name">ES6+ Logic</span>
+        </div>
+        <div class="skill-chip">
+          <span class="skill-icon">&#127760;</span>
+          <span class="skill-name">Async REST</span>
+        </div>
+        <div class="skill-chip">
+          <span class="skill-icon">&#128722;</span>
+          <span class="skill-name">SPA Capstone</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Grid -->
+    <section>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 1.5rem;">
+        <div>
+          <h2>Featured Milestone Highlights</h2>
+          <p style="color: var(--text-muted); margin-top: 0.25rem;">Multi-dimensional cards rendered via auto-responsive CSS Grid.</p>
+        </div>
+        <a href="projects.html" class="btn btn-glass" style="margin-top: 0.5rem;">View All 5 Deliverables &rarr;</a>
+      </div>
+
+      <div class="projects-responsive-grid">
+        
+        <article class="project-card">
+          <div class="card-preview-media">
+            <span class="preview-badge">Week 5 Capstone</span>
+            <div style="font-size: 3rem;">&#128722;</div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">AuraMart E-Commerce Platform</h3>
+            <p class="card-text">
+              Modular SPA featuring hash routing, multi-criteria category filtering, persistent shopping cart drawer, and interactive checkout simulation.
+            </p>
+            <ul class="card-tags">
+              <li class="tag">SPA Router</li>
+              <li class="tag">State Store</li>
+              <li class="tag">Responsive</li>
+            </ul>
+            <a href="../Week-05-AuraMart-Ecommerce-Capstone/index.html" class="btn btn-primary" style="width: 100%;">Launch Capstone</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-preview-media">
+            <span class="preview-badge">Week 4 Async</span>
+            <div style="font-size: 3rem;">&#127780;</div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">WeatherPulse Dashboard</h3>
+            <p class="card-text">
+              Live weather telemetry fetching Open-Meteo REST endpoints with geolocation, 24h scroll graphs, and offline state handling.
+            </p>
+            <ul class="card-tags">
+              <li class="tag">Fetch API</li>
+              <li class="tag">Async/Await</li>
+              <li class="tag">CSS Grid</li>
+            </ul>
+            <a href="../Week-04-WeatherPulse-Dashboard/index.html" class="btn btn-primary" style="width: 100%;">Launch WeatherPulse</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-preview-media">
+            <span class="preview-badge">Week 3 State</span>
+            <div style="font-size: 3rem;">&#9989;</div>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">TaskMaster Productivity Suite</h3>
+            <p class="card-text">
+              Full CRUD task manager with localStorage persistence, priority tags, subtask checklists, and celebration animations.
+            </p>
+            <ul class="card-tags">
+              <li class="tag">CRUD</li>
+              <li class="tag">LocalStorage</li>
+              <li class="tag">DOM Events</li>
+            </ul>
+            <a href="../Week-03-TaskMaster-TodoApp/index.html" class="btn btn-primary" style="width: 100%;">Launch TaskMaster</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Responsive Footer -->
+  <footer class="footer-responsive">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-wrapper" style="margin-bottom: 1rem;">
+          <div class="brand-logo-icon">R</div>
+          <span>Rekha Kumari</span>
+        </div>
+        <p style="color: var(--text-muted); max-width: 380px;">
+          Advancing web development through modern layout architectures, accessible engineering, and stateful JavaScript solutions.
+        </p>
+      </div>
+
+      <div>
+        <h4 style="margin-bottom: 1rem;">Navigation</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-muted);">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Developer</a></li>
+          <li><a href="projects.html">Project Showcase</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="margin-bottom: 1rem;">Theme & Display</h4>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">
+          Supports system preferences and manual dark/light toggle.
+        </p>
+        <button class="theme-toggle-btn" aria-label="Toggle Color Theme">
+          <span aria-hidden="true">&#9790;</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <span>&copy; 2026 Rekha Kumari. Web Development Internship Week 2.</span>
+      <span>Engineered with CSS Grid & Custom Properties</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
